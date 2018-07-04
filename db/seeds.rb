@@ -8,30 +8,44 @@
 #  movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #  Character.create(name: 'Luke', movie: movies.first)
 
-Category.create(title: 'Frontend')
-Category.create(title: 'Backend')
-Category.create(title: 'Database')
-Test.create(title: 'Ruby', category_id: 2, level: 2)
-Test.create(title: 'HTML', category_id: 1)
-Test.create(title: 'Vue.js', category_id: 1, level: 2)
-Test.create(title: 'jQuery', category_id: 1)
-Test.create(title: 'PHP', category_id: 2)
-Test.create(title: 'MySQL', category_id: 3, level: 2)
-Test.create(title: 'MongoDB', category_id: 3)
+cat = []
+cat[0] = Category.create!(title: 'Frontend')
+cat[1] = Category.create!(title: 'Backend')
+cat[2] = Category.create!(title: 'Database')
 
-User.create(username: 'Admin')
-User.create(username: 'User')
+Test.create!(
+  [
+    { title: 'Ruby', category_id: cat[1].id, level: 2 },
+    { title: 'HTML', category_id: cat[0].id },
+    { title: 'Vue.js', category_id: cat[0].id, level: 2 },
+    { title: 'jQuery', category_id: cat[0].id },
+    { title: 'PHP', category_id: cat[1].id },
+    { title: 'MySQL', category_id: cat[2].id, level: 2 },
+    { title: 'MongoDB', category_id: cat[2].id }
+  ]
+)
+
+User.create!(
+  [
+    { username: 'Admin' },
+    { username: 'User' }
+  ]
+)
+
 k = 1
 14.times do |i|
-  Question.create(test_id: k, body: "Question #{i+1}")
+  Question.create(test_id: k, body: "Question #{i}")
   2.times do |m|
-    correct = m.odd? ? true : false
-    Answer.create(question_id: i, body: "Answer #{m}", correct: correct)
+    Answer.create(question_id: i, body: "Answer #{m}", correct: m.odd?)
   end
   k += 1 if i.odd?
 end
 
-UserTests.create(user_id: 1, test_id: 1)
-UserTests.create(user_id: 1, test_id: 3)
-UserTests.create(user_id: 1, test_id: 4)
-UserTests.create(user_id: 1, test_id: 5)
+UserTests.create(
+  [
+    { user_id: 1, test_id: 1 },
+    { user_id: 1, test_id: 3 },
+    { user_id: 1, test_id: 4 },
+    { user_id: 1, test_id: 5 }
+  ]
+)
