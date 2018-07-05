@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_05_094851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "author_id"
+    t.index ["author_id"], name: "index_tests_on_author_id"
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
