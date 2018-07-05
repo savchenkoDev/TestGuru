@@ -15,6 +15,10 @@ class Test < ApplicationRecord
       .pluck(:title)
   }
 
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than: -1 }
+  validates :title, uniqueness: { scope: :level }
+
   # def self.find_by_category(category)
   #   joins(:category)
   #     .where(categories: { title: category })
