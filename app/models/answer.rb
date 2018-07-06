@@ -4,11 +4,11 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :body, presence: true
-  validate :validate_answer_count
+  validate :validate_answer_count, on: :create
 
   private
 
   def validate_answer_count
-    errors.add(:question_id) if Answer.where(question_id: question_id).size > 3
+    errors.add(:question_id) if question.answers.count > 3
   end
 end
