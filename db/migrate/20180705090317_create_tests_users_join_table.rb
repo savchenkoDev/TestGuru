@@ -4,5 +4,6 @@ class CreateTestsUsersJoinTable < ActiveRecord::Migration[5.2]
       t.index [:user_id, :test_id], unique: true
       # t.index [:test_id, :user_id]
     end
+    add_column :tests_users, :result, :integer
   end
 end
