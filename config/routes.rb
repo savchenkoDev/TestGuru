@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   # http://guides.rubyonrails.org/routing.html
 
   resources :tests do
-    resources :questions
+    resources :questions, shallow: true
   end
-
-  post "/tests/:test_id/questions/:id" => "questions#destroy"
 end
