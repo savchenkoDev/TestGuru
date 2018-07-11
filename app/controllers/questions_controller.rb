@@ -1,34 +1,56 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, only: %i[show destroy]
-  before_action :find_test, only: %i[create index]
+  before_action :find_test, only: %i[create]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   def index
-    render json: { questions: @test.questions }
+    @questions = Question.all
   end
 
-  def show; end
+  def show
+    @question = find_question
+  end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
-    @test.questions.create(new_question_parameters)
-    render html: '<h3><center>Question create</center></h3>'.html_safe
+    @question = @test.questions.new(question_parameters)
+
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @question = find_question
+  end
+
+  def update
+    @question = find_question
+    if @question.update(question_parameters)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @question = find_question
     @question.destroy
-    redirect_to test_questions_path
+    redirect_to test_questions_path(params[:test_id])
   end
 
   private
 
-  def new_question_parameters
+  def question_parameters
     params.require(:question).permit(:body)
   end
 
   def find_question
-    @question = Question.find(params[:id])
+    Question.find(params[:id])
   end
 
   def find_test

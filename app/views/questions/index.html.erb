@@ -1,0 +1,5 @@
+<h1>All Questions for test ID<%= @questions.first.test_id%></h1>
+
+<%= link_to 'Create Question', '/tests/new'%>
+
+<%= render 'shared/questions_list', questions: @questions%>
