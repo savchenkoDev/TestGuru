@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :test_find, only: %i[destroy update edit show]
+  before_action :find_test, only: %i[destroy update edit show]
 
   def index
     @tests = Test.all
@@ -40,7 +40,7 @@ class TestsController < ApplicationController
     params.require(:test).permit(:title, :level)
   end
 
-  def test_find
+  def find_test
     @test = Test.find(params[:id])
   end
 end
