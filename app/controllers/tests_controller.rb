@@ -12,6 +12,7 @@ class TestsController < ApplicationController
   end
 
   def create
+    @test = Test.new(test_params)
     if @test.save
       redirect_to @test
     else
@@ -37,7 +38,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level)
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
   def find_test

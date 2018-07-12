@@ -1,10 +1,8 @@
 class QuestionsController < ApplicationController
   before_action :find_question, only: %i[show edit update destroy]
-  before_action :find_test, only: %i[new create destroy]
+  before_action :find_test, only: %i[new create]
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
-
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def new
     @question = @test.questions.new
@@ -34,7 +32,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@test), notice: 'Вопрос удален.'
+    redirect_to test_path(@question.test), notice: 'Вопрос удален.'
   end
 
   private
@@ -48,8 +46,7 @@ class QuestionsController < ApplicationController
   end
 
   def find_test
-    param = params[:test_id].nil? ? @question.test.id : params[:test_id] 
-    @test = Test.find(param)
+    @test = Test.find(params[:test_id])
   end
 
   def rescue_with_question_not_found
