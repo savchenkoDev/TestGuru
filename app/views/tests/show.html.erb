@@ -3,6 +3,6 @@
 
 <%= link_to 'Create Question', new_test_question_path(@test) %>
 
-<%= render 'shared/questions_list', questions: @test.questions%>
+<%= render @test.questions %>
 
 <%= link_to 'Back', tests_path %>

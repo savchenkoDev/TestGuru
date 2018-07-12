@@ -1,17 +1,13 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[create]
+  before_action :find_test, only: %i[new create destroy]
+  before_action :find_question, only: %i[show edit update destroy]
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-  def index
-    @questions = Question.all
-  end
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def show
-    @question = find_question
-  end
+  def show; end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def create
@@ -24,12 +20,9 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
-    @question = find_question
-  end
+  def edit; end
 
   def update
-    @question = find_question
     if @question.update(question_parameters)
       redirect_to @question
     else
@@ -38,9 +31,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = find_question
     @question.destroy
-    redirect_to test_questions_path(params[:test_id])
+    redirect_to test_path(@test), notice: "Вопрос удален."
   end
 
   private
@@ -50,7 +42,7 @@ class QuestionsController < ApplicationController
   end
 
   def find_question
-    Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def find_test

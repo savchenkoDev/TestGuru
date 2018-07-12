@@ -1,15 +1,3 @@
 <h1>Create New Test</h1>
 
-<%= form_with model: @test, local: true do |form| %>
-  <%= render 'shared/errors', resource: @test %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level %>
-  </p>
-  <p><%= form.submit %></p>
-
-<% end %>
+<%= render 'form', action: 'create' %>

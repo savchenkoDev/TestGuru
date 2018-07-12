@@ -1,19 +1,17 @@
 class TestsController < ApplicationController
+  before_action :test_find, only: %i[destroy update edit show]
+
   def index
     @tests = Test.all
   end
 
-  def show
-    @test = Test.find(params[:id])
-  end
+  def show; end
 
   def new
     @test = Test.new
   end
 
   def create
-    @test = Test.new(test_params)
-
     if @test.save
       redirect_to @test
     else
@@ -21,12 +19,9 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit
-    @test = Test.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @test = Test.find(params[:id])
     if @test.update(test_params)
       redirect_to @test
     else
@@ -35,15 +30,17 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test = Test.find(params[:id])
-
     @test.destroy
-    redirect_to tests_path
+    redirect_to tests_path, notice: "Test #{@test.title} удален."
   end
 
   private
 
   def test_params
     params.require(:test).permit(:title, :level)
+  end
+
+  def test_find
+    @test = Test.find(params[:id])
   end
 end
