@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   def find_by_level(level)
-    Test.joins(:tests_users).where(
+    Test.joins(:tests_passages).where(
       level: level,
       tests_users: { user_id: id }
     )

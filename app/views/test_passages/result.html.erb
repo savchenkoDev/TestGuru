@@ -1,0 +1,5 @@
+<h1>The <%= @test_passage.test.title %> Test Was  Completed</h1>
+
+<h2 class="<%= @test_passage.result_to_percent > 85 ? 'success' : 'fail'%>" >Your result: <%= @test_passage.result_to_percent %>% </h2>
+
+<%= link_to 'To main', tests_path%>
