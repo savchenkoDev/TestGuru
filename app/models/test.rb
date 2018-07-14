@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
   belongs_to :category
   has_many :questions
-  belongs_to :author, class_name: 'User', optional: true
+  belongs_to :author, class_name: 'User'
 
   scope :easy, -> { where(level: 0..1) }
   scope :normal, -> { where(level: 2..4) }

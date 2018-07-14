@@ -14,7 +14,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-    @test.author_id = @user.id
+    @test.author = @user
     if @test.save
       redirect_to @test
     else

@@ -6,6 +6,10 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
+    if @test_passage.empty_answer?(params[:answer_ids])
+      return render :show, alert: "You did't select any answers."
+    end
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
