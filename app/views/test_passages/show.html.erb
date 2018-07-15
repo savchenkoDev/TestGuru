@@ -1,5 +1,5 @@
 <h2>Pass the <%= @test_passage.test.title %> Test</h2>
-<p>Question: <%= @test_passage.question_number %></p>
+<p>Question: <%= question_count(@test_passage) %></p>
 <b>
   <%= @test_passage.current_question.body %>
 </b>

@@ -22,19 +22,17 @@ class TestPassage < ApplicationRecord
     correct_questions.to_f / test.questions.count * 100
   end
 
-  def result_style
-    result_to_percent >= 85 ? 'success' : 'fail'
+  def success?
+    result_to_percent >= 85
   end
 
   def question_number
-    "#{test.questions.index(current_question) + 1} of
-    #{test.questions.size}"
+    test.questions.where('id < ?', current_question.id).count + 1
   end
 
   private
 
   def before_validation_set_question
-    return self.current_question = test.questions.first if new_record?
     self.current_question = next_question
   end
 
@@ -47,6 +45,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
+    return self.current_question = test.questions.first if new_record?
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end

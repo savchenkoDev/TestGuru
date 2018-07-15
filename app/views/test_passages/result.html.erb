@@ -1,6 +1,6 @@
 <h1>The <%= @test_passage.test.title %> Test Was  Completed</h1>
 
-<h2 class="<%= @test_passage.result_style %>" >
+<h2 class="<%= result_style(@test_passage) %>" >
   Your result: <%= @test_passage.result_to_percent %>%
 </h2>
 
