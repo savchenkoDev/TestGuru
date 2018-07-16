@@ -18,10 +18,10 @@ cat = Category.create!(
 
 users = User.create!(
   [
-    { username: 'Admin' },
-    { username: 'User1' },
-    { username: 'User2' },
-    { username: 'User3' }
+    { email: 'admin@example.com', password: 'admin', username: 'Admin' },
+    { email: 'user1@example.com', password: 'user1', username: 'User1' },
+    { email: 'user2@example.com', password: 'user2', username: 'User2' },
+    { email: 'user3@example.com', password: 'user3', username: 'User3' }
   ]
 )
 
@@ -45,14 +45,3 @@ k = 0
   end
   k += 1 if i.odd?
 end
-
-TestsUser.create!(
-  [
-    { user_id: users[0].id, test_id: tests[0].id, result: rand(10..100) },
-    { user_id: users[0].id, test_id: tests[1].id, result: rand(10..100) },
-    { user_id: users[1].id, test_id: tests[1].id, result: rand(10..100) },
-    { user_id: users[1].id, test_id: tests[3].id, result: rand(10..100) },
-    { user_id: users[2].id, test_id: tests[4].id, result: rand(10..100) },
-    { user_id: users[3].id, test_id: tests[5].id, result: rand(10..100) }
-  ]
-)

@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-
+    <div class="content">
+      <%= render 'shared/main_nav'%>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

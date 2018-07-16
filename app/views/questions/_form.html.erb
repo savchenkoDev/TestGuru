@@ -1,9 +1,7 @@
-
 <%= question_header(@question)%>
-<%= render 'shared/errors', resource: @question %>
-<%= form_for @question, url: {action: action} do |form| %>
-<%= render 'shared/errors', resource: @question %>
 
+<%= form_with(model: [@test, @question], local: true) do |form| %>
+<%= render 'shared/errors', resource: @question %>
 <p>
   <%= form.label :body %><br>
   <%= form.text_field :body %>
