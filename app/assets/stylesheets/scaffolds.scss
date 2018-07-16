@@ -92,13 +92,14 @@ a {
   border-radius: 5px;
   text-decoration: none;
   padding: 5px;
-}
 
-footer a {
-  border: none;
-  border-radius: 5px;
-  text-decoration: underline;
-  padding: 0;
+  &:visited {
+    color: black;
+  }
+  
+  &:hover {
+    color: white;
+  }
 }
 
 table {
