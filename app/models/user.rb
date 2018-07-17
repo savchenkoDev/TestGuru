@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :email, uniqueness: true
+  validates_format_of :email, with: /.+@.+\..+/i
 
   has_secure_password
 
