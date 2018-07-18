@@ -5,12 +5,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_request_page
-    return unless request.get?
-    session[:request_page] = request.fullpath
-  end
-
   def authenticate_user!
+    session[:request_page] = request.fullpath if request.get?
     redirect_to login_path unless current_user
   end
 

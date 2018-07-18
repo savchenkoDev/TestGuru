@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :set_request_page, only: :authenticate_user!
   before_action :find_user, on: %i[create update]
 
   def new; end
