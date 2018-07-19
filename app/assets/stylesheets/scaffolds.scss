@@ -58,7 +58,7 @@ div {
 }
 
 #error_explanation {
-  width: 450px;
+  width: 350px;
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
@@ -85,21 +85,6 @@ div {
   padding: 15px;
   margin: 100px auto 0;
   background-color: #fff;
-}
-
-a {
-  border: 1px solid black;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 5px;
-
-  &:visited {
-    color: black;
-  }
-  
-  &:hover {
-    color: white;
-  }
 }
 
 table {

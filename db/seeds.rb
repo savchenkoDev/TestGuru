@@ -18,10 +18,10 @@ cat = Category.create!(
 
 users = User.create!(
   [
-    { email: 'admin@example.com', password: 'admin', username: 'Admin' },
-    { email: 'user1@example.com', password: 'user1', username: 'User1' },
-    { email: 'user2@example.com', password: 'user2', username: 'User2' },
-    { email: 'user3@example.com', password: 'user3', username: 'User3' }
+    { email: 'admin@example.com', password: 'admin1'},
+    { email: 'user1@example.com', password: 'user11'},
+    { email: 'user2@example.com', password: 'user21'},
+    { email: 'user3@example.com', password: 'user31'}
   ]
 )
 
