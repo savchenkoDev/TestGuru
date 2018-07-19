@@ -1,4 +1,4 @@
-class Admin::QuestionsController < AuthController
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show edit update destroy]
   before_action :find_test, only: %i[new create]
 
