@@ -1,1 +1,3 @@
-class Admin < User; end
+class Admin < User
+  validates :first_name, :last_name, presence: true
+end
