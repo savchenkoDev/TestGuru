@@ -1,7 +1,15 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<h2 class="<%= result_style(@test_passage) %>" >
+<h2 class="" >
   Your result: <%= @test_passage.result_to_percent %>%
 </h2>
+<div class="progress">
+  <div class="progress-bar <%= result_style(@test_passage) %>"
+    role="progressbar"
+    style="width: <%= @test_passage.result_to_percent %>%;"
+    aria-valuenow="<%= @test_passage.result_to_percent %>"
+    aria-valuemin="0" aria-valuemax="100">
+  </div>
+</div>
 
-<%= link_to t('.button'), tests_path%>
+<%= link_to t('.button'), tests_path, class: 'btn btn-primary mt-2' %>
