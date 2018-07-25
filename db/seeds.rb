@@ -18,10 +18,9 @@ cat = Category.create!(
 
 users = User.create!(
   [
-    { email: 'admin@example.com', password: 'admin1'},
-    { email: 'user1@example.com', password: 'user11'},
-    { email: 'user2@example.com', password: 'user21'},
-    { email: 'user3@example.com', password: 'user31'}
+    { email: 'admin@q.ru', password: '123123', type: 'Admin', first_name: 'Admin', last_name: 'Admin'},
+    { email: 'user@q.ru', password: '123123'},
+
   ]
 )
 
@@ -29,11 +28,11 @@ tests = Test.create!(
   [
     { title: 'Ruby', category_id: cat[1].id, level: 0, author_id: users[0].id },
     { title: 'HTML', category_id: cat[0].id, level: 1, author_id: users[1].id },
-    { title: 'Vue.js', category_id: cat[0].id, level: 2, author_id: users[2].id },
-    { title: 'jQuery', category_id: cat[0].id, level: 3, author_id: users[3].id },
+    { title: 'Vue.js', category_id: cat[0].id, level: 2, author_id: users[0].id },
+    { title: 'jQuery', category_id: cat[0].id, level: 3, author_id: users[1].id },
     { title: 'PHP', category_id: cat[1].id, level: 4, author_id: users[0].id },
     { title: 'MySQL', category_id: cat[2].id, level: 5, author_id: users[1].id },
-    { title: 'MongoDB', category_id: cat[2].id, level: 6, author_id: users[3].id }
+    { title: 'MongoDB', category_id: cat[2].id, level: 6, author_id: users[0].id }
   ]
 )
 

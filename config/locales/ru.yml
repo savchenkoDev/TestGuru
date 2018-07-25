@@ -31,6 +31,7 @@ ru:
       logout: "Выход"
       login: "Вход"
       signup: "Регистрация"
+      admin: "Админка"
 
   tests:
     index:
