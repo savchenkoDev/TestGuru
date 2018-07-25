@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resource)
-    admin? ? admin_tests_path : tests_path
-  end
-
   def default_url_options
     I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
   end
