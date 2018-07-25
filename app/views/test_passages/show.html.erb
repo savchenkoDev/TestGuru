@@ -10,13 +10,13 @@
                                   :id,
                                   :body,
                                   include_hidden: false do |b| %>
-    <p>
+    <div class="form-check">
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label  %>
-    </p>
+    </div>
   <% end %>
 
-  <%= form.submit t('.next') %>
+  <%= form.submit t('.next'), class: 'btn btn-primary' %>
 <% end %>
 
-<p class="exit-button"><%= link_to t('.exit'), tests_path %></p>
+<p class="exit-button"><%= link_to t('.exit'), tests_path, class: 'btn btn-primary mt-1' %></p>
