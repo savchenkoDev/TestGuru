@@ -3,7 +3,7 @@ class CreateTableGists < ActiveRecord::Migration[5.2]
     create_table :gists do |t|
       t.integer :question_id
       t.string :gist_url
-      t.string :user
+      t.integer :user_id
     end
   end
 end

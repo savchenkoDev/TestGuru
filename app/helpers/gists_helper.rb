@@ -1,5 +1,5 @@
 module GistsHelper
-  def short_body(question_id)
-    link_to Question.find(question_id).body[0..24], admin_question_path(question_id)
+  def gist_link(question)
+    link_to truncate(question.body, length: 25), admin_question_path(question.id)
   end
 end

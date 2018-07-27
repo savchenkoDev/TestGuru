@@ -2,6 +2,7 @@ class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages
   belongs_to :category
+  has_many :gists
   has_many :questions
   belongs_to :author, class_name: 'User'
 

@@ -1,3 +1,5 @@
 class Gist < ApplicationRecord
-  validates :question_id, :gist_url, :user, presence: true
+  belongs_to :user
+  belongs_to :question
+  validates :gist_url, presence: true
 end

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_182343) do
   create_table "gists", force: :cascade do |t|
     t.integer "question_id"
     t.string "gist_url"
-    t.string "user"
+    t.integer "user_id"
   end
 
   create_table "questions", force: :cascade do |t|

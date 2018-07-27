@@ -1,5 +1,6 @@
 en:
-  gist_header: "Question for %{title} test on TestGuru"
+  services:
+    gist_header: "Question for %{title} test on TestGuru"
 
   helpers:
     select:

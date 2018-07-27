@@ -1,5 +1,7 @@
 ru:
-  gist_header: "Вопрос к тесту %{title} на TestGuru"
+  services:
+    gist_header: "Вопрос к тесту %{title} на TestGuru"
+
   helpers:
     select:
       # Default value for :prompt => true in FormOptionsHelper

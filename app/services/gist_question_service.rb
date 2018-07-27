@@ -9,15 +9,11 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def get_all_gists(username)
-    @client.list_gists(username)
-  end
-
   private
 
   def gist_params
     {
-      description: I18n.t('.gist_header', title: @test.title),
+      description: I18n.t('services.gist_header', title: @test.title),
       public: false,
       files: {
         'text-guru-question.txt' => {
@@ -28,8 +24,6 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 end
