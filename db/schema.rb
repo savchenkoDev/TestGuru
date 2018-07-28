@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_07_26_182343) do
     t.integer "question_id"
     t.string "gist_url"
     t.integer "user_id"
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|

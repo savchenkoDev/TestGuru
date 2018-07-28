@@ -6,7 +6,7 @@ class GistQuestionService
   def create_gist(question)
     @question = question
     @test = @question.test
-    @client.create_gist(gist_params)
+    Result.new(@client.create_gist(gist_params))
   end
 
   private
@@ -25,5 +25,19 @@ class GistQuestionService
 
   def gist_content
     [@question.body, *@question.answers.pluck(:body)].join("\n")
+  end
+
+  class Result
+    def initialize(response)
+      @response = response
+    end
+
+    def success?
+      !@response.html_url.nil?
+    end
+
+    def html_url
+      @response.html_url
+    end
   end
 end

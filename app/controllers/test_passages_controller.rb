@@ -21,7 +21,7 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    @result = Result.new(GistQuestionService.new.create_gist(@test_passage.current_question))
+    @result = GistQuestionService.new.create_gist(@test_passage.current_question)
 
     if @result.success?
       @gist = Gist.create!(gist_params)

@@ -4,7 +4,6 @@ ru:
 
   helpers:
     select:
-      # Default value for :prompt => true in FormOptionsHelper
       prompt: "Выберите категорию"
     submit:
       test:
@@ -60,6 +59,7 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         all_gists: "Список Гист"
+        public: "В публичную часть"
       test:
         show: "Показать"
         edit: "Изменить"
