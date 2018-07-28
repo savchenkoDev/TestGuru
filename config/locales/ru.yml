@@ -1,7 +1,9 @@
 ru:
+  services:
+    gist_header: "Вопрос к тесту %{title} на TestGuru"
+
   helpers:
     select:
-      # Default value for :prompt => true in FormOptionsHelper
       prompt: "Выберите категорию"
     submit:
       test:
@@ -56,6 +58,8 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
+        all_gists: "Список Гист"
+        public: "В публичную часть"
       test:
         show: "Показать"
         edit: "Изменить"
@@ -127,3 +131,8 @@ ru:
       question_count: "Вопрос: %{q_count}"
       next: "Следующий"
       exit: "Выход"
+      gist_question: "Добавить Гист"
+    gist:
+      success: "Гист успешно добавлен. %{link}"
+      failure: "При сохранении произошла ошибка"
+      show: "Посмотреть"

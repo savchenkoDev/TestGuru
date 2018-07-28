@@ -16,9 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-#UI
-gem 'jquery-rails'
-gem 'bootstrap', '>=4.0.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -38,6 +35,14 @@ gem 'devise', '~> 4.0'
 gem 'devise-i18n'
 gem 'rails-i18n', '>= 5.0.0'
 
+# UI
+gem 'bootstrap', '>=4.0.0'
+gem 'jquery-rails'
+
+# NETWORKING
+gem "octokit", "~> 4.0"
+gem 'faraday'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -50,6 +55,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
