@@ -1,0 +1,5 @@
+ru:
+  devise:
+    registrations:
+      new:
+        password_length: "минимум %{length} символов"
