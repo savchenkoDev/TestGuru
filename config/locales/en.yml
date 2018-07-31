@@ -9,6 +9,7 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+
     label:
       test:
         title: "Title"
@@ -61,6 +62,7 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+        cancel: "Cancel"
       form:
         back: "Back"
       new:
@@ -77,6 +79,8 @@ en:
         actions: "Actions"
         edit: "Edit"
         back: "Back"
+      form_inline:
+        submit: "OK"
     questions:
       new:
         header: "Create new %{title} question"
