@@ -1,9 +1,8 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[destroy update edit show start]
+  before_action :find_tests, only: %i[index update_inline]
+  before_action :find_test, only: %i[destroy update update_inline edit show start]
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show; end
 
@@ -30,6 +29,14 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: "Test #{@test.title} удален."
@@ -43,5 +50,9 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_tests
+    @tests = Test.all
   end
 end
