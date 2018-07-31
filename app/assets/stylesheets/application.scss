@@ -10,3 +10,15 @@ table {
     text-align: center;
   }
 }
+
+.progress-container {
+  background-color: lightgrey;
+  width: 100%;
+  margin-top: 5px;
+  height: 20px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: green;
+}
