@@ -3,6 +3,6 @@
               local: true,
               class: 'form-inline hide',
               data: { test_id: test.id } do |f| %>
-  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.text_field :title, class: 'form-control', id: 'title-input' %>
   <%= f.submit t('.submit'), class: 'btn btn-primary' %>
 <% end %>

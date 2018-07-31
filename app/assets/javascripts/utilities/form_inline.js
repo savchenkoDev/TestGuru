@@ -3,6 +3,8 @@ document.addEventListener('turbolinks:load', function () {
 
   var errors = document.querySelector('.resource-errors')
   if (errors) {
+    var titleInput = document.querySelector('#title-input');
+    titleInput.value = '';
     var resourceId = errors.dataset.resourceId;
     formInlineHandler(resourceId);
   }
@@ -27,7 +29,4 @@ function formInlineHandler(testId, resourceTitle='') {
     testTitle.classList.remove('hide');
     link.textContent = "Edit";
   }
-
-
-
 }
