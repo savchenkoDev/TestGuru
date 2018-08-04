@@ -32,6 +32,8 @@ en:
       login: "Login"
       signup: "Sign up"
       admin: "AdminPanel"
+    footer:
+      feedback: "Обратная связь"
 
   tests:
     index:
