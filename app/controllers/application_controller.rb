@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def feedback; end
 
   def send_feedback
-    FeedbackMailer.send_feedback(feedback_params).deliver_now
+    FeedbackMailer.send_feedback(params).deliver_now
     redirect_to root_path, notice: t('.feedback')
   end
 
@@ -27,11 +27,5 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
-  end
-
-  private
-
-  def feedback_params
-    params.permit(:feedback, :name)
   end
 end
