@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', function () {
-  $('.form-inline-link').on('click', formInlineLinkHandler)
+  $('.form-inline-link').on('click', formInlineLinkHandler);
 
-  var errors = document.querySelector('.resource-errors')
+  var errors = document.querySelector('.resource-errors');
   if (errors) {
     var resourceId = errors.dataset.resourceId;
     formInlineHandler(resourceId);
@@ -14,7 +14,7 @@ function formInlineLinkHandler(event) {
   formInlineHandler(testId);
 }
 
-function formInlineHandler(testId, resourceTitle='') {
+function formInlineHandler(testId, resourceTitle) {
   var link = document.querySelector('.form-inline-link[data-test-id="' +testId+ '"]');
   var formInline = document.querySelector('.form-inline[data-test-id="' +testId+ '"]');
   var testTitle = document.querySelector('.test-title[data-test-id="' +testId+ '"]');

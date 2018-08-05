@@ -1,4 +1,8 @@
 ru:
+  application:
+    send_feedback:
+      feedback: "Ваш отзыв отправлен."
+
   services:
     gist_header: "Вопрос к тесту %{title} на TestGuru"
 
@@ -29,13 +33,14 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-
     main_nav:
       hello: "Добро пожаловать, гуру %{user} "
       logout: "Выход"
       login: "Вход"
       signup: "Регистрация"
       admin: "Админка"
+    footer:
+      feedback: "Обратная связь"
 
   tests:
     index:

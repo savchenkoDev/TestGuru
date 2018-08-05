@@ -8,6 +8,13 @@ class ApplicationController < ActionController::Base
     I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
   end
 
+  def feedback; end
+
+  def send_feedback
+    FeedbackMailer.send_feedback(params).deliver_now
+    redirect_to root_path, notice: t('.feedback')
+  end
+
   protected
 
   def configure_permitted_parameters

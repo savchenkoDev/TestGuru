@@ -1,4 +1,8 @@
 en:
+  application:
+    send_feedback:
+      feedback: "Your feedback has been sent."
+
   services:
     gist_header: "Question for %{title} test on TestGuru"
 
@@ -32,6 +36,8 @@ en:
       login: "Login"
       signup: "Sign up"
       admin: "AdminPanel"
+    footer:
+      feedback: "Обратная связь"
 
   tests:
     index:
