@@ -1,4 +1,8 @@
 ru:
+  application:
+    send_feedback:
+      feedback: "Ваш отзыв отправлен."
+
   services:
     gist_header: "Вопрос к тесту %{title} на TestGuru"
 

@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   def feedback; end
 
   def send_feedback
-    ApplicationMailer.send_feedback(feedback_params).deliver_now
-    redirect_to root_path, notice: 'Письмо отправлено! Ждите с Вами скоро свяжутся'
+    FeedbackMailer.send_feedback(feedback_params).deliver_now
+    redirect_to root_path, notice: t('.feedback')
   end
 
   protected

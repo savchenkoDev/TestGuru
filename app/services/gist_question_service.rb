@@ -40,4 +40,5 @@ class GistQuestionService
       @response.html_url
     end
   end
+
 end

@@ -1,4 +1,8 @@
 en:
+  application:
+    send_feedback:
+      feedback: "Your feedback has been sent."
+
   services:
     gist_header: "Question for %{title} test on TestGuru"
 
