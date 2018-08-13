@@ -1,4 +1,16 @@
 ru:
+  enumerize:
+    category:
+      category_badge:
+        one: "За прохождение всех тестов в категории"
+        other: "За прохождение всех тестов в категории"
+      single_badge:
+        one: "За прохождение теста"
+        other: "За прохождение теста"
+      level_badge:
+        one: "За прохождение всех тестов на уровне"
+        other: "За прохождение всех тестов на уровне"
+
   application:
     send_feedback:
       feedback: "Ваш отзыв отправлен."
@@ -126,6 +138,9 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
         confirm: "Вы уверены?"
+    badges:
+      form:
+        save: "Сохранить"
 
 
   tests_mailer:
