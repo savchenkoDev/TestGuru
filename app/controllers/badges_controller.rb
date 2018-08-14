@@ -4,6 +4,6 @@ class BadgesController < AuthController
   end
 
   def my
-    @badges = current_user.badge
+    @badges = current_user.badges
   end
 end

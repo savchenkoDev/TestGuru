@@ -3,8 +3,8 @@
   <div class="card-body">
     <h5 class="card-title"><%= badge.title %></h5>
     <p class="card-text">
-      Выдается <%= badge.category %> <%=badge.primary_param %>
-      <% if badge.category == 'single_badge' %>
+      Выдается <%= badge.rule %> <%=badge.primary_param %>
+      <% if badge.rule == 'single_badge' %>
         уровня <%= badge.secondary_param %>
       <% end %>
     </p>

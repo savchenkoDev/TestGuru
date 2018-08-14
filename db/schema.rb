@@ -25,17 +25,10 @@ ActiveRecord::Schema.define(version: 2018_08_12_185933) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "cover", default: "../../kubok.png"
-    t.string "category", null: false
+    t.string "cover"
+    t.string "rule", null: false
     t.string "primary_param"
     t.string "secondary_param"
-  end
-
-  create_table "badges_tests", id: false, force: :cascade do |t|
-    t.bigint "badge_id", null: false
-    t.bigint "test_id", null: false
-    t.index ["badge_id"], name: "index_badges_tests_on_badge_id"
-    t.index ["test_id"], name: "index_badges_tests_on_test_id"
   end
 
   create_table "categories", force: :cascade do |t|

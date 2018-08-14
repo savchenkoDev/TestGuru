@@ -4,16 +4,16 @@ document.addEventListener('turbolinks:load', function () {
 })
 
 function handlerCategoryBlur(categoryInput) {
-  var primary_param = document.querySelector('#primary_param');
-  var secondary_param = document.querySelector('#secondary_param');
+  var primaryParam = document.querySelector('#primary_param');
+  var secondaryParam = document.querySelector('#secondary_param');
   var value = document.querySelector('#category_input').value;
   switch (value) {
     case 'single_badge':
-      primary_param.classList.remove('hide');
-      secondary_param.classList.remove('hide');
+      primaryParam.classList.remove('hide');
+      secondaryParam.classList.remove('hide');
       break;
     default:
-      primary_param.classList.remove('hide');
-      secondary_param.classList.add('hide');
+      primaryParam.classList.remove('hide');
+      secondaryParam.classList.add('hide');
   }
 }

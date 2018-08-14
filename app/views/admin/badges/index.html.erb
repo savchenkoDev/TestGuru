@@ -1,4 +1,4 @@
-<h1>All Badges</h1>
+<h1><%= t('.all_badge')%></h1>
 
 <%= link_to t('.new_badge'), new_admin_badge_path, class: 'btn btn-success' %>
 
@@ -14,4 +14,4 @@
   </tbody>
 </table>
 
-<%= link_to "Назад", admin_tests_path %>
+<%= link_to t('.back'), admin_tests_path %>
