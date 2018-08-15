@@ -7,13 +7,11 @@ function handlerCategoryBlur(categoryInput) {
   var primaryParam = document.querySelector('#primary_param');
   var secondaryParam = document.querySelector('#secondary_param');
   var value = document.querySelector('#category_input').value;
-  switch (value) {
-    case 'single_badge':
-      primaryParam.classList.remove('hide');
-      secondaryParam.classList.remove('hide');
-      break;
-    default:
-      primaryParam.classList.remove('hide');
-      secondaryParam.classList.add('hide');
+  if (value =='single_badge') {
+    primaryParam.classList.remove('hide');
+    secondaryParam.classList.remove('hide');
+  } else {
+    primaryParam.classList.remove('hide');
+    secondaryParam.classList.add('hide');
   }
 }

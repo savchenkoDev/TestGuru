@@ -36,13 +36,8 @@ class Badge < ApplicationRecord
     case rule
     when 'category_badge'
       errors.add(:primary_param) unless Category.exists?(title: primary_param)
-    # Бэйдж за прохождение конкретного теста
     when 'single_badge'
-      # Первая валидация проверяет наличие теста с таких названием, если нет то ошибка в названиии
-      errors.add(:primary_param) unless Test.exists?(title: primary_param)
-      # Вторая валидация проверяет наличие теста с таким названием и уровнем, если нет то ошибка в уровне
       errors.add(:secondary_param) unless Test.exists?(title: primary_param, level: secondary_param)
-      # Если оставить какую-то одну то будет непонятн, в чем именно проблема
     when 'level_badge'
       errors.add(:primary_param) unless Test.exists?(level: primary_param)
     end
