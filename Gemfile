@@ -42,7 +42,8 @@ gem 'octicons_helper'
 
 # NETWORKING
 gem "octokit", "~> 4.0"
-gem 'faraday'
+
+gem 'enumerize', '~> 2.1', '>= 2.1.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

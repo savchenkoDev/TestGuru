@@ -92,6 +92,8 @@ GEM
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
+    enumerize (2.2.2)
+      activesupport (>= 3.2)
     erubi (1.7.1)
     execjs (2.7.0)
     faraday (0.15.2)
@@ -251,7 +253,7 @@ DEPENDENCIES
   devise (~> 4.0)
   devise-i18n
   dotenv-rails
-  faraday
+  enumerize (~> 2.1, >= 2.1.2)
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
@@ -275,4 +277,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
