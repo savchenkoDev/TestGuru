@@ -6,11 +6,11 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    if @test_passage.empty_answer?(params[:answer_ids])
-      return render :show, alert: "You did't select any answers."
+    if check_remaining_time
+      @test_passage.stop
+    else
+      @test_passage.accept!(params[:answer_ids])
     end
-
-    @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
       current_user.badges << BadgeService.new(@test_passage).build
@@ -45,5 +45,9 @@ class TestPassagesController < ApplicationController
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def check_remaining_time
+    @test_passage.test.with_timer? && @test_passage.end_time?
   end
 end

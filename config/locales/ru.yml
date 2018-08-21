@@ -152,6 +152,7 @@ ru:
       next: "Следующий"
       exit: "Выход"
       gist_question: "Добавить Гист"
+      remaining_time: "Оставшееся время"
     gist:
       success: "Гист успешно добавлен. %{link}"
       failure: "При сохранении произошла ошибка"
