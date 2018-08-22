@@ -5,6 +5,7 @@
   </td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
+  <td><%= octicon "check" if test.timer > 0 %></td>
   <td>
     <div class="btn-group" role="group" aria-label="Basic example">
       <%= link_to t('.show'), admin_test_path(test), class: 'btn btn-secondary' %>

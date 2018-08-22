@@ -16,11 +16,16 @@ class Test < ApplicationRecord
     greater_than_or_equal_to: 0
   }
   validates :title, uniqueness: { scope: :level }
+  validates :timer, presence: true
 
   def self.by_category(category)
     joins(:category)
       .where(categories: { title: category })
       .order(title: :desc)
       .pluck(:title)
+  end
+
+  def with_timer?
+    timer.positive?
   end
 end
