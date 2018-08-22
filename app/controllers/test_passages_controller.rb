@@ -1,16 +1,14 @@
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
+  before_action :check_time, only: :update
 
   def show; end
 
   def result; end
 
   def update
-    if check_remaining_time
-      @test_passage.stop
-    else
-      @test_passage.accept!(params[:answer_ids])
-    end
+    @test_passage.accept!(params[:answer_ids])
+
 
     if @test_passage.completed?
       current_user.badges << BadgeService.new(@test_passage).build
@@ -41,6 +39,10 @@ class TestPassagesController < ApplicationController
       gist_url: @result.html_url,
       user: current_user
     }
+  end
+
+  def check_time
+    @test_passage.stop if check_remaining_time
   end
 
   def find_test_passage

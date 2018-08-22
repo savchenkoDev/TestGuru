@@ -36,11 +36,11 @@ class TestPassage < ApplicationRecord
   end
 
   def remaining_time
-    (active_until - Time.now).to_i
+    (active_until - Time.current).to_i
   end
 
   def end_time?
-    Time.now > active_until
+    Time.current > active_until
   end
 
   def stop
